@@ -61,7 +61,7 @@ class NestedParse(Directive):
         try:
             title_node = node[0][0]
             if isinstance(title_node, nodes.title):
-                del node[0][0]
+                title_node.children.pop(0)
         except IndexError:
             pass
         return node.children
